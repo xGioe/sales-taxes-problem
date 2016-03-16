@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cat_name: MyString
+  tax_fee: false
+  fee_free: false
+
+two:
+  cat_name: MyString
+  tax_fee: false
+  fee_free: false
