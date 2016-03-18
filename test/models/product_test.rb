@@ -7,10 +7,6 @@ class ProductTest < ActiveSupport::TestCase
     @product = Product.new(name: 'banana', price: '10.0', imported: false, category_id: category_id, qnty: 1)
   end
 
-  test 'should be valid' do
-    assert @product.valid?
-  end
-
   test 'name should be present' do
     @product.name = "   "
     assert_not @product.valid?
@@ -40,7 +36,4 @@ class ProductTest < ActiveSupport::TestCase
     @product.qnty = 0
     assert_not @product.valid?
   end
-
-
-
 end
