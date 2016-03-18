@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318143948) do
+ActiveRecord::Schema.define(version: 20160318174847) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "cat_name"
-    t.decimal  "tax_fee",    precision: 5, scale: 2
     t.boolean  "fee_free"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.decimal  "tax_fee",    precision: 5, scale: 2, default: 0.0
   end
 
   create_table "products", force: :cascade do |t|
