@@ -5,6 +5,6 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :imported, presence: true
   validates :category, presence: true
-  validates :qnty, presence: true, length: { minimum: 1 }
-  
+  validates :qnty, presence: true, length: { minimum: 0 }
+
 end
