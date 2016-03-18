@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  cat_name: MyString
-  tax_fee: false
-  fee_free: false
+cat_with_fee:
+  cat_name: tv
+  fee_free: true
+  tax_fee: 0.25
 
-two:
-  cat_name: MyString
-  tax_fee: false
+
+cat_not_with_fee:
+  cat_name: apple
   fee_free: false

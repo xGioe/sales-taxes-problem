@@ -3,25 +3,26 @@ require 'test_helper'
 class CategoryTest < ActiveSupport::TestCase
 
   def setup
-    @category = Category.new(cat_name: 'games', tax_fee: 10.0, fee_free: false )
+    @cat_with_fee = categories(:cat_with_fee)
+    @cat_not_with_fee = categories(:cat_not_with_fee)
   end
 
   test 'cat_name should be present' do
-    @category.cat_name = "   "
-    assert_not @category.valid?
+    @cat_with_fee.cat_name = "   "
+    assert_not @cat_with_fee.valid?
   end
 
   test 'fee_free should be specified' do
-    @category.fee_free = nil
-    assert_not @category.valid?
+    @cat_with_fee.fee_free = nil
+    assert_not @cat_with_fee.valid?
   end
 
-  # test 'tax_fee should not be specified if fee_free' do
-  #   assert @category.tax_fee.nil?
-  # end
-  #
-  # test 'tax_fee should be specified if not fee_free' do
-  #   assert_not @category.tax_fee.nil?
-  # end
+  test 'tax_fee should not be specified if fee_free' do
+    assert @cat_not_with_fee.tax_fee.nil?
+  end
+
+  test 'tax_fee should be specified if not fee_free' do
+    assert_not @cat_with_fee.tax_fee.nil?
+  end
 
 end
