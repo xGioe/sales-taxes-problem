@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318174847) do
+ActiveRecord::Schema.define(version: 20160316220104) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "cat_name"
-    t.boolean  "fee_free"
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-    t.decimal  "tax_fee",    precision: 5, scale: 2, default: 0.0
+    t.decimal  "tax_fee",    precision: 5, scale: 2
+    t.boolean  "fee_free",                           default: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.decimal  "price"
-    t.boolean  "imported"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "category_id"
+    t.boolean  "imported",    default: false
     t.integer  "qnty"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "category_id"
   end
 
 end
