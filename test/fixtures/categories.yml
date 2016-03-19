@@ -2,10 +2,10 @@
 
 cat_with_fee:
   cat_name: tv
-  fee_free: true
+  fee_free: false
   tax_fee: 0.25
 
 
 cat_not_with_fee:
   cat_name: apple
-  fee_free: false
+  fee_free: true

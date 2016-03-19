@@ -4,9 +4,13 @@ class ProductTest < ActiveSupport::TestCase
 
   def setup
     @category = categories(:cat_with_fee)
+    # @category.save
     @product = Product.new(name: 'banana', price: '10.00', imported: false, category_id: @category.id, qnty: 1)
   end
 
+  test 'is valid' do
+    assert @product.valid?
+  end
 
   test 'name should be present' do
     @product.name = "   "
@@ -14,7 +18,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test 'name should not have less than three characters' do
-    @product.name = "a" * 2
+    @product.name = "a"
     assert_not @product.valid?
   end
 

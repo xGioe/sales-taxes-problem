@@ -7,6 +7,11 @@ class CategoryTest < ActiveSupport::TestCase
     @cat_not_with_fee = categories(:cat_not_with_fee)
   end
 
+  test 'is valid' do
+    assert @cat_with_fee.valid?
+    assert @cat_not_with_fee.valid?
+  end
+
   test 'cat_name should be present' do
     @cat_with_fee.cat_name = "   "
     assert_not @cat_with_fee.valid?
