@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :imported, inclusion: { in: [true, false] }
   validates :category_id, presence: true
-  validates :qnty, presence: true, numericality: { greater_than: 0 }
+  validates :qnty, presence: true, numericality: { greater_than: 0, integer
+  validates_associated :category
 
 end
