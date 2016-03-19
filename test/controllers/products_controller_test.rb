@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
+    @category = categories(:cat_with_fee)
     @product = products(:one)
   end
 
@@ -18,7 +19,7 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should create product" do
     assert_difference('Product.count') do
-      post :create, product: { imported: @product.imported, name: @product.name, price: @product.price }
+      post :create, product: { name: @product.name, price: @product.price, imported: @product.imported, category_id: @category.id, qnty: @product.qnty }
     end
 
     assert_redirected_to product_path(assigns(:product))
@@ -35,7 +36,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
-    patch :update, id: @product, product: { imported: @product.imported, name: @product.name, price: @product.price }
+    patch :update, id: @product, product: { name: @product.name, price: @product.price, imported: @product.imported, category_id: @category.id, qnty: @product.qnty }
     assert_redirected_to product_path(assigns(:product))
   end
 
