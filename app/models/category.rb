@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :products
+  has_many :products, dependent: :destroy
 
   validates :cat_name, presence: true
   validates :fee_free, inclusion: { in: [true,false] }
