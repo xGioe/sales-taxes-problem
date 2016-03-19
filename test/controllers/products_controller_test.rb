@@ -47,4 +47,10 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+
+  test "should redirect to new category if no category exists" do
+    Category.destroy_all
+    get :new, id: @product
+    assert_redirected_to new_category_path
+  end
 end

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :empty_list?
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -65,6 +66,16 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+    end
+
+private
+    # Empty List
+    def empty_list?
+      @list = Category.all
+      if @list.empty?
+        redirect_to new_category_path
+        flash[:danger] = "Please add at least one category first"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
