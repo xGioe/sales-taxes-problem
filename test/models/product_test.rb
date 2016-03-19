@@ -4,8 +4,9 @@ class ProductTest < ActiveSupport::TestCase
 
   def setup
     @category = categories(:cat_with_fee)
-    @product = Product.new(name: 'banana', price: '10.0', imported: false, category_id: @category.id, qnty: 1)
+    @product = Product.new(name: 'banana', price: '10.00', imported: false, category_id: @category.id, qnty: 1)
   end
+
 
   test 'name should be present' do
     @product.name = "   "
