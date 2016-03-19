@@ -37,4 +37,9 @@ class ProductTest < ActiveSupport::TestCase
     assert_not @product.valid?
   end
 
+  test 'qnty should be an integer' do
+    @product.qnty = 'string'
+    assert_not @product.valid?
+  end
+
 end
