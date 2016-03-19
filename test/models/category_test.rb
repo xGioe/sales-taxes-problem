@@ -30,4 +30,9 @@ class CategoryTest < ActiveSupport::TestCase
     assert_not @cat_with_fee.tax_fee.nil?
   end
 
+  test 'tax_fee should be integer only' do
+    @cat_with_fee.tax_fee = 3.5
+    assert_not @cat_with_fee.valid?
+  end
+
 end

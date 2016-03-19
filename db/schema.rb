@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319152842) do
+ActiveRecord::Schema.define(version: 20160319221106) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "cat_name"
-    t.decimal  "tax_fee",    precision: 5, scale: 2
-    t.boolean  "fee_free",                           default: false
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.integer  "tax_fee"
+    t.boolean  "fee_free",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "categories", ["cat_name"], name: "index_categories_on_cat_name", unique: true

@@ -3,7 +3,7 @@
 cat_with_fee:
   cat_name: tv
   fee_free: false
-  tax_fee: 0.25
+  tax_fee: 25
 
 
 cat_not_with_fee:

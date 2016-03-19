@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :cat_name, class: "col-sm-2 control-label" %>
+    <%= f.label :Category_Name, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.text_field :cat_name, class: "form-control" %>
     </div>
@@ -23,8 +23,14 @@
     <div class="col-sm-10">
       <%= f.text_field :tax_fee, class: "form-control" %>
     </div>
+
+    <!-- <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <span class="input-group-addon">.00</span>
+    </div>
+     -->
   </div>
-  <%= %>
   <div id="fee_free_check" class="form-group" >
     <%= f.label :fee_free, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
