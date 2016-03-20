@@ -36,7 +36,9 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update category" do
-    patch :update, id: @category, category: { cat_name: @category.cat_name, fee_free: @category.fee_free, tax_fee: @category.tax_fee }
+    patch :update, id: @category, category: { cat_name: @category.cat_name,
+                                              fee_free: @category.fee_free,
+                                              tax_fee: @category.tax_fee }
     assert_redirected_to category_path(assigns(:category))
   end
 

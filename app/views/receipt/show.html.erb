@@ -30,8 +30,8 @@
           <td></td>
           <td></td>
           <td></td>
-        <td><%= @total %></td>
-        <td><%= @total_taxes %></td>
+        <td><%= number_to_currency(@total, precision: 2) %></td>
+        <td><%= number_to_currency(@total_taxes, precision: 2) %></td>
       </tr>
     </tbody>
   </table>
