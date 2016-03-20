@@ -57,11 +57,7 @@
   <div class="form-group">
     <%= f.label :Category, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <select class="selectpicker">
-        <%= content_tag_for(:option, @category, :menu ) do |cat| %>
-          <%= cat.cat_name %>
-        <% end %>
-      </select>
+        <%= f.select :category_id, options_for_select(Category.all.map { |c| [c.cat_name, c.id] }), {}, class:"selectpicker"  %>
     </div>
   </div>
   <!-- # Quantity -->
