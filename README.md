@@ -24,8 +24,6 @@ rails server
 [...]
 
 [2016-03-20 20:08:07] INFO  WEBrick::HTTPServer#start: pid=8124 port=3000
-
-
 ```
 
 - Open browser and type this address
