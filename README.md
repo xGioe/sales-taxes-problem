@@ -20,7 +20,7 @@ git clone https://github.com/xGioe/sales-taxes-problem
 
 ```
 bundle exec rake db:migrate
-bundle exec rake db:seeds
+bundle exec rake db:seed
 
 rails server
 
