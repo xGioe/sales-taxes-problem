@@ -10,41 +10,15 @@ class ReceiptController < ApplicationController
     # Total taxes to pay
     @total_taxes = 0
 
-    # Iterates for every product in prods_list
     @prods_list.each do |item|
-      @prod_price = item.price
-      # Check whether item is imported and applies imported_tax_value
-      if item.imported == true
-        @prod_fee = (item.price * 0.05 )
-        @prod_price += @prod_fee
-        @total_taxes += @prod_fee
-      end
-
-      # Check whether item's category has tax_fee and applies tax_fee_value
-      @prod_category = Category.find_by(id: item.category_id)
-      if @prod_category.fee_free == false
-        # Get the item's category_tax_fee
-        @prod_category_fee = @prod_category.tax_fee
-        # Calculate tax amount for item price
-        @prod_fee = (item.price * (@prod_category_fee*0.01) )
-        # Add category_tax_fee amount to item's price
-        @prod_price += @prod_fee
-        # Add category_tax_fee amount to item's total taxes
-        @total_taxes += @prod_fee
-      end
-        # Calculate total price for item's quantity
-        @prod_price *= item.qnty
-        # Add total price of item to final receipt total
-        @total += @prod_price
+      @totals = item.get_taxed_price
+      @total += @totals[0]
+      @total_taxes += @totals[1]
     end
 
-<<<<<<< HEAD
     @total.round(2)
     @total_taxes.round(2)
-=======
-    # @new_total = (@total * 20).ceil / 20.0
-    # @total.round(2)
->>>>>>> 2f9086a5078d9396640b83465abca0495028be31
+
 
     render 'show'
   end
