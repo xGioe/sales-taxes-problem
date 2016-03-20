@@ -19,12 +19,12 @@
       <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
-  
+
   <!-- # Price -->
   <div class="form-group">
     <%= f.label :price, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.number_field :price, in: 0.00..100.00, step: 0.01, class: "form-control" %>
+      <%= f.number_field :price, step: 0.01, class: "form-control" %>
     </div>
   </div>
 

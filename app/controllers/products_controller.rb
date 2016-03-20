@@ -26,7 +26,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -41,6 +40,20 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+
+    ## Fix update product imported/not imported
+
+    # @before_prod = Product.find_by(id: @product.id)
+    # @after_prod = @product
+    #
+    # if @before_prod.imported != @after_prod.imported
+    #   if @after_prod.imported == true
+    #     @product.imported = false
+    #   else
+    #     @product.imported = true
+    #   end
+    # end
+
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -68,7 +81,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
-private
+  private
     # Empty List
     def empty_list?
       @list = Category.all

@@ -1,0 +1,34 @@
+<h2 class="text-center"> Here the total list </h2>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Quantity</th>
+            <th>Name</th>
+            <th>Price</th>
+          <th>Total</th>
+          <th>Total Taxes</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @list) do |prod| %>
+          <td><%= prod.qnty %></td>
+          <td><%= prod.name %></td>
+          <td><%= prod.price %></td>
+        <td></td>
+        <td></td>
+      <% end %>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        <td><%= @total %></td>
+        <td><%= @total_taxes %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr>
