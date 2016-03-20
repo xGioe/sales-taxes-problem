@@ -1,13 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: juice
-  price: 9.99
+  name: one
+  price: 100.00
   imported: false
-  qnty: 2
+  qnty: 1
 
-two:
-  name: MyString
-  price: 9.99
+product_without_fees:
+  name: two
+  price: 100.00
+  imported: false
+  qnty: 1
+  category_id: categories(:cat_not_with_fee)
+
+product_with_import_fees:
+  name: three
+  price: 100.00
   imported: true
-  qnty: 5
+  qnty: 1
+  category_id: categories(:cat_not_with_fee)
+
+product_with_category_fees:
+  name: four
+  price: 100.00
+  imported: false
+  qnty: 1
+  category_id: categories(:cat_with_fee)
+
+product_with_both_fees:
+  name: five
+  price: 100.00
+  imported: false
+  qnty: 1
+  category_id: categories(:cat_with_fee)
