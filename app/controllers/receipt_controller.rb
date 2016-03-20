@@ -34,25 +34,6 @@ class ReceiptController < ApplicationController
         # Add total price of item to final receipt total
         @total += @prod_price
     end
-
-
-    # @cat_list.each do |cat|
-    #     cat.products.each do |item|
-    #       @tmp_price = 0
-    #       if item.imported == true
-    #         @tmp_price = item.price + (item.price * 0.05)
-    #         @tmp_price *= item.qnty
-    #       end
-    #
-    #       if
-    #
-    #
-    #
-    #       @total_taxes += cat.tax_fee
-    #     end
-    # end
-
-
     render 'show'
   end
 

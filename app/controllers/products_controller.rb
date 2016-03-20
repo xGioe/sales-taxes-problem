@@ -40,20 +40,6 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-
-    ## Fix update product imported/not imported
-
-    # @before_prod = Product.find_by(id: @product.id)
-    # @after_prod = @product
-    #
-    # if @before_prod.imported != @after_prod.imported
-    #   if @after_prod.imported == true
-    #     @product.imported = false
-    #   else
-    #     @product.imported = true
-    #   end
-    # end
-
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
