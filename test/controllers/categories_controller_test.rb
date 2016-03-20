@@ -17,7 +17,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should create category" do
-    @new_category = { cat_name: 'one', fee_free: true, tax_fee: 0.00 }
+    @new_category = { cat_name: 'example', fee_free: true, tax_fee: nil }
     assert_difference('Category.count') do
       post :create, category: @new_category
     end

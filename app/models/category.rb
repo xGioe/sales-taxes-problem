@@ -4,7 +4,6 @@ class Category < ActiveRecord::Base
   validates :cat_name, presence: true
   validates :cat_name, uniqueness:  {case_sensitive: false}
   validates :fee_free, inclusion: { in: [true,false] }
-  validates :tax_fee, presence: true, if: :has_fee?
   validates :tax_fee, numericality: { greater_than: 0, only_integer: true }, if: :has_fee?
   validates :tax_fee, absence: true, if: :has_not_fee?
 

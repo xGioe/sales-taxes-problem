@@ -40,7 +40,17 @@
   <div class="form-group">
     <%= f.label :category_id, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.number_field :category_id, class: "form-control" %>
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <%= content_tag_for(:ol, @category, :menu ) do |cat| %>
+                  <a href="#" onclick='getId();'> <%= cat.cat_name %></a>
+              <% end %>
+            </ul>
+        </div><!-- /btn-group -->
+        <%= f.text_field :category_id, class: "form-control" %>
+      </div><!-- /input-group -->
     </div>
   </div>
 

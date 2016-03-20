@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160319221106) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "cat_name"
-    t.integer  "tax_fee",    default: 10
+    t.integer  "tax_fee"
     t.boolean  "fee_free",   default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false

@@ -22,12 +22,14 @@ class CategoryTest < ActiveSupport::TestCase
     assert_not @cat_with_fee.valid?
   end
 
-  test 'tax_fee should not be specified if fee_free' do
-    assert @cat_not_with_fee.tax_fee.nil?
+  test 'tax_fee should not be specified if not_with_fee' do
+    @cat_not_with_fee.tax_fee = 24
+    assert_not @cat_not_with_fee.valid?
   end
 
-  test 'tax_fee should be specified if not fee_free' do
-    assert_not @cat_with_fee.tax_fee.nil?
+  test 'tax_fee should be specified if with_fee' do
+    @cat_with_fee.tax_fee = nil
+    assert_not @cat_with_fee.valid?
   end
 
   test 'tax_fee should be integer only' do

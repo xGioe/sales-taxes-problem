@@ -15,15 +15,18 @@ class ReceiptController < ApplicationController
       @prod_price = item.price
       # Check whether item is imported and applies imported_tax_value
       if item.imported == true
-        @prod_price += (item.price * 0.05)
+        @prod_fee = (item.price * 0.05 )
+        @prod_price += @prod_fee
+        @total_taxes += @prod_fee
       end
 
       # Check whether item's category has tax_fee and applies tax_fee_value
-      if item.category.fee_free == false
+      @prod_category = Category.find_by(id: item.category_id)
+      if @prod_category.fee_free == false
         # Get the item's category_tax_fee
-        @prod_category_fee = item.category.tax_fee
+        @prod_category_fee = @prod_category.tax_fee
         # Calculate tax amount for item price
-        @prod_fee = (item.price * (@prod_category_fee/100) )
+        @prod_fee = (item.price * (@prod_category_fee*0.01) )
         # Add category_tax_fee amount to item's price
         @prod_price += @prod_fee
         # Add category_tax_fee amount to item's total taxes
