@@ -38,8 +38,8 @@ class ReceiptController < ApplicationController
         @total += @prod_price
     end
 
-    @new_total = (@total * 20).ceil / 20.0
-    @@total.round(2)
+    # @new_total = (@total * 20).ceil / 20.0
+    # @total.round(2)
 
     render 'show'
   end

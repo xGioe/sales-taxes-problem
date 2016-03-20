@@ -19,6 +19,9 @@ git clone https://github.com/xGioe/sales-taxes-problem
 - Start server in localhost and copy **port** number
 
 ```
+bundle exec rake db:migrate
+bundle exec rake db:seeds
+
 rails server
 
 [...]
