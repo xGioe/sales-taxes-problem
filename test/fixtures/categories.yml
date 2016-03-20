@@ -9,3 +9,4 @@ cat_with_fee:
 cat_not_with_fee:
   cat_name: apple
   fee_free: true
+  tax_fee: nil
