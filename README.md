@@ -1,13 +1,15 @@
-# Solution to 'Sales-taxes-problem' (https://github.com/xpeppers/sales-taxes-problem).
+# Solution to 'Sales-taxes-problem'
+
 This web application simulate a groceries list where user can insert products and
 calculate total price and total taxes paid for each product chosen
+
+Problem url: https://github.com/xpeppers/sales-taxes-problem
 
 # Instructions
 - Clone my original repository's fork
 
 ```
 git clone https://github.com/xGioe/sales-taxes-problem
-
 ```
 
 - Follow this guide to install Rails: http://installrails.com/
@@ -29,7 +31,6 @@ rails server
 - Open browser and type this address
 ```
 localhost: <port number>
-
 ```
 
 #Author
