@@ -55,3 +55,7 @@ gem 'bootstrap-select-rails'
 	  gem 'mini_backtrace'
 	  gem 'guard-minitest'
 	end
+
+  group :production do
+    gem 'pg'
+  end
