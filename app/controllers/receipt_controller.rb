@@ -17,8 +17,9 @@ class ReceiptController < ApplicationController
       @total_taxes += @totals[1]
     end
 
-    @total.round(2)
-    @total_taxes.round(2)
+    
+    # @total.round(2)
+    # @total_taxes.round(2)
 
 
     render 'show'

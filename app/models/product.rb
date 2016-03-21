@@ -13,21 +13,42 @@ class Product < ActiveRecord::Base
 
   # Get produt's taxed price and tax value applied to it
   def get_taxed_price
-    @result = self.price
-    @taxes = 0
+
+    @imported_tax = 0.05
+
+    @taxed_price = 0
+    @taxes_total = 0
+
+    @prod_price = self.price
+    @taxes_percentage = 0
+
     if self.imported == true
-      @imported_tax = self.price * 0.05
-      @taxes += @imported_tax
-      @result += @imported_tax
+      @taxes_percentage += @imported_tax
     end
 
     if self.category.fee_free == false
-      @cat_fee = self.price * (self.category.tax_fee * 0.01)
-      @taxes += @cat_fee
-      @result += @cat_fee
+      @taxes_percentage += ( self.category.tax_fee * 0.01 )
     end
 
-    return @result, @taxes
+    #rounded_value = (raw_value * 20).round / 20.0
+
+    @taxes = ( (self.price * @taxes_percentage) * 20).ceil * 0.05
+    @taxed_price = self.price + @taxes
+    # @result = self.price
+    # @taxes = 0
+    # if self.imported == true
+    #   @imported_tax = self.price * 0.05
+    #   @taxes += @imported_tax
+    #   @result += @imported_tax
+    # end
+    #
+    # if self.category.fee_free == false
+    #   @cat_fee = self.price * (self.category.tax_fee * 0.01)
+    #   @taxes += @cat_fee
+    #   @result += @cat_fee
+    # end
+
+    return @taxed_price, @taxes
 
   end
 
