@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   validate :validate_cat_id
 
 
-
+  # Get produt's taxed price and tax value applied to it
   def get_taxed_price
     @result = self.price
     @taxes = 0

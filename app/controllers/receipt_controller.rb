@@ -10,6 +10,7 @@ class ReceiptController < ApplicationController
     # Total taxes to pay
     @total_taxes = 0
 
+    # For each product added calculate total price and total_taxes paid
     @prods_list.each do |item|
       @totals = item.get_taxed_price
       @total += @totals[0]
