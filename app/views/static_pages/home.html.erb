@@ -1,28 +1,10 @@
 <div class="page-header">
   <h1 class="welcome">Welcome</h1>
 </div>
-<div class=" welcome h2">
-    <div class= "row ">
-      <%= link_to new_category_path, class: 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-plus"></span>
-      New Category
-    <% end %>
-    </div>
-    <div class= "row ">
-      <%= link_to categories_path, class: 'btn btn-primary' do %>
-      List Category
-    <% end %>
-    </div>
-    <div class= "row ">
+<div class=" welcome h3">
+    You can read a short <%= link_to "Guide", guide_path %> on how this app works or create a  
       <%= link_to new_product_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-plus"></span>
       New Product
     <% end %>
-    </div>
-    <div class= "row ">
-      <%= link_to products_path, class: 'btn btn-primary' do %>
-      List Product
-    <% end %>
-    </div>
-  </div>
 </div>

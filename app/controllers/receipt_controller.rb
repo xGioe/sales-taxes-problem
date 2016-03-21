@@ -23,16 +23,6 @@ class ReceiptController < ApplicationController
     render 'show'
   end
 
-#   private
-#   # Set imported tax and calculate price with imported tax
-#   def apply_imported_tax_value
-#     @imported_tax_value = 0.05
-#
-#     if @product.imported == true
-#       @product.price *= @imported_tax_value
-#     end
-# end
-
 private
   # Redirect to new product path if products list is empty
   def empty_groceries_list?
