@@ -10,6 +10,7 @@
     <thead>
       <tr>
             <th>Quantity</th>
+            <th>Imported</th>
             <th>Name</th>
             <th>Price</th>
           <th>Total</th>
@@ -21,12 +22,14 @@
     <tbody>
       <%= content_tag_for(:tr, @list) do |prod| %>
           <td><%= prod.qnty %></td>
+          <td><%= prod.imported %></td>
           <td><%= prod.name %></td>
           <td><%= number_to_currency(prod.get_taxed_price[0], precision: 2) %></td>
         <td></td>
         <td></td>
       <% end %>
       <tr>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>

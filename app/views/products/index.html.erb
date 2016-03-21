@@ -14,10 +14,10 @@
     <thead>
       <tr>
             <th>Quantity</th>
+            <th>Imported</th>
             <th>Name</th>
             <th>Price</th>
             <th>Category</th>
-            <th>Imported</th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,10 +27,10 @@
     <tbody>
       <%= content_tag_for(:tr, @products) do |product| %>
             <td><%= product.qnty %></td>
+            <td><%= product.imported %></td>
             <td><%= product.name %></td>
             <td><%= number_to_currency(product.price, precision: 2) %></td>
             <td><%= product.category.cat_name %></td>
-            <td><%= product.imported %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
