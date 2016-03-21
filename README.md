@@ -6,6 +6,14 @@ calculate total price and total taxes paid for each product chosen
 Problem url: https://github.com/xpeppers/sales-taxes-problem
 
 # Instructions
+
+# 1 - Open Official App
+
+```
+https://sales-taxes-problem.herokuapp.com/
+```
+
+# 2 - Download Repo
 - Clone my original repository's fork
 
 ```
