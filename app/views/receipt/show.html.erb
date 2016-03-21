@@ -22,7 +22,7 @@
       <%= content_tag_for(:tr, @list) do |prod| %>
           <td><%= prod.qnty %></td>
           <td><%= prod.name %></td>
-          <td><%= prod.get_taxed_price[0] %></td>
+          <td><%= number_to_currency(prod.get_taxed_price[0], precision: 2) %></td>
         <td></td>
         <td></td>
       <% end %>
